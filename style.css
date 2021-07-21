@@ -1,0 +1,699 @@
+/* #region Reset CSS */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+/* #endregion */
+
+/* #region  Fonts */
+@font-face {
+    font-family: Pacifico;
+    src: url("assets/fonts/Pacifico/Pacifico-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("assets/fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+    font-weight: 400;
+}
+/* #endregion */
+
+body,
+html {
+    width: 90vw;
+    all: unset;
+    margin: 0px;
+    border: 0px;
+    font-family: "Montserrat", Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 18px;
+}
+
+#header {
+    all: unset;
+    margin: 0px;
+    border: 0px;
+    display: flex;
+    flex-direction: column;
+    background-image: url("./assets/images/foodMain.jpg");
+    background-size: cover;
+}
+
+#heading {
+    padding: 5vh 0px;
+    width: 80vw;
+    height: auto;
+    font-family: "Pacifico";
+    text-align: center;
+    font-size: 10vw;
+    font-weight: 400;
+    align-self: center;
+    color: white;
+}
+
+#transparentArea {
+    padding: 15px 0px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+#searchArea {
+    all: unset;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#searchComp {
+    margin-left: 50px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 0px;
+}
+
+#searchComp p {
+    color: white;
+    font-size: 26px;
+    text-align: center;
+}
+
+#searchComp select {
+    height: 40px;
+    margin: 15px 0px;
+    font-size: 14px;
+    font-family: "Montserrat";
+}
+
+#searchComp input {
+    margin-top: 15px;
+    font-family: "Montserrat";
+    padding: 1vh 1vw 1vh 1vw;
+    border-radius: 5px;
+    outline: none;
+    border-color: grey;
+    border-style: solid;
+    font-size: 18px;
+}
+
+#searchComp label {
+    color: white;
+    font-size: 30px;
+    transform: translate(0%, 0%);
+    vertical-align: middle;
+    font-family: "Pacifico";
+}
+
+#searchComp2 {
+    margin-left: 20px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 0px;
+}
+
+#searchComp2 select {
+    height: 40px;
+    margin: 15px 0px;
+}
+
+#searchComp2 input {
+    width: 50px;
+    height: 50px;
+    font-family: "Montserrat";
+    padding: 5px 5px;
+    border-radius: 5px;
+    outline: none;
+    border-color: grey;
+    border-style: solid;
+    font-size: 14px;
+    margin-right: 15px;
+}
+
+#minMaxHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#minMaxHeader p {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    align-self: center;
+    margin-right: 25px;
+}
+
+#maxMinSection {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding-left: 5vw;
+    border-radius: 25px;
+    margin-bottom: 15px;
+}
+
+#maxMinSection h2 {
+    font-family: "Montserrat";
+    color: yellowgreen;
+    font-size: 60px;
+}
+
+.minMaxChooser {
+    width: 25vw;
+    display: inline-flex;
+    align-items: center;
+}
+
+.minMaxChooser h4 {
+    color: white;
+    font-size: 40px;
+    overflow: hidden;
+    font-family: "Pacifico";
+    margin-right: 5px;
+    text-align: left;
+    width: 300px;
+}
+
+.dropList {
+    display: inline;
+}
+
+.dropLine {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.dropLine h4 {
+    color: white;
+    font-size: 50px;
+    transform: translate(0%, 0%);
+    vertical-align: middle;
+    font-family: "Pacifico";
+    margin-right: 20px;
+}
+
+.dropList p {
+    color: white;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    height: 150px;
+}
+
+.minMaxDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 15px 0px;
+}
+
+.singleMinMax {
+    margin: 10px 0px;
+    text-align: center;
+}
+
+#searchButtonDiv {
+    align-self: center;
+}
+
+#searchButtonDiv button {
+    height: 100px;
+    font-size: 18px;
+    font-family: "Montserrat";
+    margin: 15px;
+    padding: 1vh 1.2vw;
+    background-color: lightseagreen;
+    color: white;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: white;
+    outline: none;
+    text-align: center;
+    width: 25vw;
+}
+
+#searchButtonDiv button:hover {
+    background-color: cadetblue;
+}
+
+#searchButtonDiv button:active {
+    background-color: cornflowerblue;
+}
+
+#itemSelectionDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 30px 0px;
+}
+
+#itemSelectionDiv h3 {
+    margin-right: 5vw;
+    padding: 10px;
+    color: white;
+    font-size: 50px;
+    overflow: hidden;
+    font-family: "Pacifico";
+    text-align: left;
+}
+
+#itemSelectionDiv h3:hover {
+    color: rgba(97, 250, 70, 0.7);
+}
+
+#itemAmount {
+    align-self: center;
+    width: 50px;
+    height: 50px;
+    font-family: "Montserrat";
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border-color: grey;
+    border-style: solid;
+    font-size: 14px;
+}
+
+/* #region  FoodList */
+
+#foodList {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat";
+    background-color: rgba(255, 69, 0, 0.4);
+    z-index: 55;
+    align-items: center;
+}
+
+#foodTile {
+    font-size: 19px;
+    width: 88vw;
+    margin: 15px 0px;
+    padding: 15px 50px;
+    display: block;
+    position: relative;
+    background-image: url("assets/images/cuttingboard.jpg");
+    background-size: cover;
+    z-index: 999;
+}
+
+#foodTile::after {
+    content: "";
+    background-image: url("assets/images/cuttingboard.jpg");
+    background-size: cover;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    border-radius: 35px;
+}
+
+#foodHeading {
+    padding: 15px;
+    font-family: "Pacifico";
+    width: 80vw * 0.8;
+    font-size: 100px;
+    text-align: center;
+    background-color: rgba(255, 251, 31, 0.4);
+    border-radius: 250px;
+    margin-bottom: 25px;
+}
+
+#quickInfo {
+    display: flex;
+    margin: 15px 15px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0px;
+}
+
+.quickInfoBlock {
+    padding: 0px 25px;
+    margin: 10px 15px;
+    background-color: rgba(250, 128, 114, 0.5);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.quickInfoBlock h5 {
+    font-family: "Pacifico";
+    font-size: 50px;
+    text-align: center;
+}
+
+.quickInfoBlock p {
+    font-size: 25px;
+    text-align: center;
+}
+
+.readyTimeHori {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 0px 15px 15px;
+}
+
+.readyTimeHori p {
+    margin-left: 20px;
+}
+
+.timeUnit {
+    margin-right: 20px;
+}
+
+#foodSummary {
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#foodSummary a {
+    color: paleturquoise;
+    text-decoration: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+#foodImage {
+    margin-left: 30px;
+    margin-right: 25px;
+    min-width: 24vw;
+    height: min-content;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#foodImage img {
+    color: white;
+    vertical-align: middle;
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+#foodSummary p {
+    color: white;
+    background-color: rgba(95, 95, 95, 0.9);
+    padding: 15px;
+    border-radius: 15px;
+    margin-right: 30px;
+    margin-top: 15px;
+}
+
+#foodLists {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.foodList {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    background-color: rgba(255, 166, 0, 0.5);
+    padding: 30px 30px 15px 30px;
+    border-radius: 15px;
+}
+
+.foodList h4 {
+    font-family: "Pacifico";
+    font-size: 50px;
+}
+
+.foodList ul {
+    padding: 5px;
+}
+
+.foodList li {
+    padding: 5px;
+}
+
+#healthOverview {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.healthBlock {
+    margin: 10px;
+    background-color: rgba(250, 181, 135, 0.5);
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+.healthBlock h4 {
+    font-family: "Pacifico";
+    font-size: 45px;
+}
+
+.healthInfoUnit {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.healthInfoUnit p {
+    font-size: 22px;
+    margin-left: 5px;
+}
+
+.pUnit {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+#foodSteps {
+    background-color: rgba(65, 105, 225, 0.3);
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin: 20px 25px;
+    margin-left: 30px;
+}
+
+#foodSteps h2 {
+    font-family: "Pacifico";
+    color: white;
+    font-size: 80px;
+    margin-left: 15px;
+}
+
+.stepBlocks {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: 15px 0px;
+    display: flex;
+    color: white;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stepBlocks h3 {
+    font-size: 40px;
+    padding: 7.5px;
+    margin-right: 15px;
+}
+
+.stepBlocks p {
+    flex: 100;
+}
+
+/* #endregion */
+
+#foodIndex {
+    margin: 15px;
+    padding: 25px;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 50px;
+    width: 90vw;
+}
+
+#foodIndex h2 {
+    margin-top: 5px;
+    font-family: "Pacifico";
+    font-size: 130px;
+    width: max-content;
+    color: white;
+}
+
+#foodIndex ul {
+    padding: 15px;
+    font-size: 22px;
+    text-align: center;
+    list-style: none;
+}
+
+#foodIndex li {
+    color: white;
+    padding: 8px;
+    font-size: 22px;
+}
+
+#foodIndex li:hover {
+    color: palegreen;
+    font-size: 1.2em;
+    height: 1em;
+}
+
+#foodIndex a {
+    text-decoration: none;
+}
+
+#floatingActionBar {
+    height: 5vw;
+    width: 5vw;
+    position: fixed;
+    bottom: 1vh;
+    right: 1vh;
+    z-index: 3000;
+    background-color: rgb(89, 5, 199);
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    margin: 0px;
+    margin-top: 2.5vw;
+}
+
+#floatingActionBar p {
+    font-family: "Pacifico";
+    font-size: 3vw;
+    padding-right: 0.1vw;
+    padding-bottom: 0.25vw;
+}
+
+#floatingActionBar a {
+    color: white;
+    text-decoration: none;
+}

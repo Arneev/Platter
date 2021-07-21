@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" type="text/javascript"></script>
+        <title>Platter</title>
+    </head>
+    <body>
+        <div id="floatingActionBar">
+            <a href="#foodIndex"><p>i</p></a>
+        </div>
+        <div id="header">
+            <div id="heading">
+                <h1>Platter</h1>
+            </div>
+            <div id="transparentArea">
+                <div id="searchArea">
+                    <div id="searchComp">
+                        <div>
+                            <input
+                                id="searchBox"
+                                type="text"
+                                placeholder="Looking for?"
+                                onkeypress="if (this.value.length <= 13){this.style.width = 13 + 'ch';}else{if (this.value.length < 30){this.style.width = ((this.value.length)) + 'ch';}}"
+                            />
+                        </div>
+
+                        <div class="dropList">
+                            <div class="dropLine">
+                                <h4>Cusine</h4>
+                                <select
+                                    id="cusineDropDown"
+                                    onchange="addCusine()"
+                                >
+                                    <option value="none">Any</option>
+                                    <option value="african">African</option>
+                                    <option value="american">American</option>
+                                    <option value="british">British</option>
+                                    <option value="cajun">Cajun</option>
+                                    <option value="caribbean">Caribbean</option>
+                                    <option value="chinese">Chinese</option>
+                                    <option value="eastern european">
+                                        Eastern European
+                                    </option>
+                                    <option value="european">European</option>
+                                    <option value="french">French</option>
+
+                                    <option value="german">German</option>
+                                    <option value="greek">Greek</option>
+                                    <option value="indian">Indian</option>
+                                    <option value="irish">Irish</option>
+                                    <option value="italian">Italian</option>
+                                    <option value="japanese">Japanese</option>
+                                    <option value="jewish">Jewish</option>
+                                    <option value="korean">Korean</option>
+                                    <option value="latin american">
+                                        Latin American
+                                    </option>
+
+                                    <option value="mediterranean">
+                                        Mediterranean
+                                    </option>
+                                    <option value="mexican">Mexican</option>
+                                    <option value="middle eastern">
+                                        Middle Eastern
+                                    </option>
+                                    <option value="nordic">Nordic</option>
+                                    <option value="southern">Southern</option>
+                                    <option value="spanish">Spanish</option>
+                                    <option value="thai">Thai</option>
+                                    <option value="vietnamese">
+                                        Vietnamese
+                                    </option>
+                                </select>
+                            </div>
+                            <p id="cusineContent"></p>
+                        </div>
+
+                        <div class="dropList">
+                            <div class="dropLine">
+                                <h4>Diet</h4>
+                                <select id="dietDropDown" onchange="addDiet()">
+                                    <option value="none">Any</option>
+                                    <option value="gluten free">
+                                        Gluten Free
+                                    </option>
+                                    <option value="dairy free">
+                                        Dairy Free
+                                    </option>
+                                    <option value="ketogenic">Ketogenic</option>
+                                    <option value="vegetarian">
+                                        Vegetarian
+                                    </option>
+                                    <option value="vegan">Vegan</option>
+                                    <option value="pescetarian">
+                                        Pescetarian
+                                    </option>
+                                    <option value="paleo">Paleo</option>
+                                    <option value="primal">Primal</option>
+                                    <option value="lacto-vegetarian">
+                                        Lacto-Vegetarian
+                                    </option>
+                                    <option value="ovo-vegetarian">
+                                        Ovo-Vegetarian
+                                    </option>
+                                    <option value="whole30">Whole30</option>
+                                </select>
+                            </div>
+
+                            <p id="dietContent"></p>
+                        </div>
+
+                        <div class="dropList">
+                            <div class="dropLine">
+                                <h4>Intolerances</h4>
+                                <select
+                                    id="alergiesDropDown"
+                                    onchange="addAlerg()"
+                                >
+                                    <option value="none">Any</option>
+                                    <option value="dairy">Dairy</option>
+                                    <option value="egg">Egg</option>
+                                    <option value="gluten">Gluten</option>
+                                    <option value="grain">Grain</option>
+                                    <option value="peanut">Peanut</option>
+                                    <option value="seafood">Seafood</option>
+                                    <option value="sesame">Sesame</option>
+                                    <option value="shellfish">Shellfish</option>
+                                    <option value="soy">Soy</option>
+                                    <option value="sulfite">Sulfite</option>
+                                    <option value="tree nut">Tree Nut</option>
+                                    <option value="wheat">Wheat</option>
+                                </select>
+                            </div>
+                            <p id="alergContent"></p>
+                        </div>
+                    </div>
+
+                    <div id="searchComp2">
+                        <div id="maxMinSection">
+                            <div id="minMaxHeader">
+                                <h2>In Grams</h2>
+                                <p>You can leave them empty</p>
+                            </div>
+                            <div class="minMaxDiv">
+                                <div class="minMaxChooser">
+                                    <h4>Max Carbs</h4>
+                                    <input
+                                        type="number"
+                                        id="maxCarbs"
+                                        min="0"
+                                    />
+                                </div>
+                                <div class="minMaxChooser">
+                                    <h4>Min Carbs</h4>
+                                    <input
+                                        type="number"
+                                        id="minCarbs"
+                                        min="0"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="minMaxDiv">
+                                <div class="minMaxChooser">
+                                    <h4>Max Calories</h4>
+                                    <input
+                                        type="number"
+                                        id="maxCalories"
+                                        min="0"
+                                    />
+                                </div>
+                                <div class="minMaxChooser">
+                                    <h4>Min Calories</h4>
+                                    <input
+                                        type="number"
+                                        id="minCalories"
+                                        min="0"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="minMaxDiv">
+                                <div class="minMaxChooser">
+                                    <h4>Max Protein</h4>
+                                    <input
+                                        type="number"
+                                        id="maxProtein"
+                                        min="0"
+                                    />
+                                </div>
+                                <div class="minMaxChooser">
+                                    <h4>Min Protein</h4>
+                                    <input
+                                        type="number"
+                                        id="minProtein"
+                                        min="0"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="minMaxDiv">
+                                <div class="minMaxChooser">
+                                    <h4>Max Fat</h4>
+                                    <input type="number" id="maxFat" min="0" />
+                                </div>
+                                <div class="minMaxChooser">
+                                    <h4>Min Fat</h4>
+                                    <input type="number" id="minFat" min="0" />
+                                </div>
+                            </div>
+
+                            <div class="minMaxDiv">
+                                <div class="minMaxChooser">
+                                    <h4>Max Sugar</h4>
+                                    <input
+                                        type="number"
+                                        id="maxSugar"
+                                        min="0"
+                                    />
+                                </div>
+                                <div class="minMaxChooser">
+                                    <h4>Min Sugar</h4>
+                                    <input
+                                        type="number"
+                                        id="minSugar"
+                                        min="0"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="minMaxDiv">
+                                <div class="minMaxChooser">
+                                    <h4>Max Sodium</h4>
+                                    <input
+                                        type="number"
+                                        id="maxSodium"
+                                        min="0"
+                                    />
+                                </div>
+                                <div class="minMaxChooser">
+                                    <h4>Min Sodium</h4>
+                                    <input
+                                        type="number"
+                                        id="minSodium"
+                                        min="0"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="minMaxDiv">
+                                <div class="minMaxChooser">
+                                    <h4>Max Fiber</h4>
+                                    <input
+                                        type="number"
+                                        id="maxFiber"
+                                        min="0"
+                                    />
+                                </div>
+                                <div class="minMaxChooser">
+                                    <h4>Min Fiber</h4>
+                                    <input
+                                        type="number"
+                                        id="minFiber"
+                                        min="0"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="singleMinMax">
+                                <div class="minMaxChooser">
+                                    <h4>Max Ready Time</h4>
+                                    <input
+                                        type="number"
+                                        id="maxReadyTime"
+                                        min="0"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="searchButtonDiv">
+                            <button type="button" onclick="getResults()">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="foodIndex">
+                    <h2>Index</h2>
+                    <ul id="foodIndexUL"></ul>
+                </div>
+            </div>
+        </div>
+        <div id="foodList"></div>
+    </body>
+</html>
