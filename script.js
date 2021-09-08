@@ -3,7 +3,7 @@
 /* #region  Classes */
 class ApiClient {
     constructor() {
-        this.apiKey = "169b43223c27423ab673daa3138ac181";
+        this.apiKey = "API_KEY";
     }
 
     makeURL(
